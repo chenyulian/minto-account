@@ -1,10 +1,12 @@
 <template>
-    <div>
-        Record
-    </div>
+    <Layout>
+        <p>
+            记账
+        </p>
+    </Layout>
 </template>
 
-<script>
+<script lang="ts">
     export default {
         
     }
