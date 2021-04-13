@@ -1,11 +1,7 @@
 <template>
     <div>
         Statistics
-        <nav>
-      <router-link to="/statistics" class="item">统计</router-link> |
-      <router-link to="/" class="item">主页</router-link> |
-      <router-link to="/userInfo" class="item">我的</router-link>
-    </nav>
+        <Nav />
     </div>
 </template>
 

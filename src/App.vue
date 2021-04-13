@@ -13,15 +13,5 @@
   color: #2c3e50;
 }
 
-nav {
-  border:1px solid black;
-  padding: 30px;
-  display: flex;
-  flex-direction: row;
 
-  >.item {
-    padding: 0 12px;
-  }
-  
-}
 </style>
