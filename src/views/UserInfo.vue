@@ -1,8 +1,7 @@
 <template>
-    <div>
+    <Layout> 
         UserInfo
-        <Nav />
-    </div>
+    </Layout>
 </template>
 
 <script>
