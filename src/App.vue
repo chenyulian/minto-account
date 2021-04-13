@@ -1,8 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
@@ -16,16 +13,15 @@
   color: #2c3e50;
 }
 
-#nav {
+nav {
+  border:1px solid black;
   padding: 30px;
+  display: flex;
+  flex-direction: row;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  >.item {
+    padding: 0 12px;
   }
+  
 }
 </style>
