@@ -19,8 +19,16 @@
   box-sizing: border-box;
 }
 
+ul,ol {
+  list-style: none;
+}
+
 a {
   text-decoration: none;
+}
+
+:focus {
+  outline: none;
 }
 
 </style>

@@ -6,7 +6,7 @@
       </router-link> 
       <router-link to="/record" class="item">
         <Icon name="money" />
-        记账
+        记一笔
       </router-link> 
       <router-link to="/userInfo" class="item">
         <Icon name="user" />

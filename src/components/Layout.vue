@@ -1,6 +1,6 @@
 <template>
     <div class="layout-wrapper">
-        <div class="content">
+        <div class="content" :class="classPrefix && `${classPrefix}-content`">
             <slot />
         </div>
         
@@ -15,7 +15,10 @@
         name: 'Layout',
         components: {
             Nav
-        }
+        },
+        props: [
+            'classPrefix'
+        ]
     }
 </script>
 
