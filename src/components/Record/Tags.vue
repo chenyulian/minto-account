@@ -19,11 +19,14 @@
     @Component
     export default class Tags extends Vue{
         @Prop({ required: true, type: Array }) tags!: string[];
+        
         // to fix: tags可能为空数组
-        selectedTag = this.tags[0];
+        // selectedTag = this.tags[0] || '';
+        @Prop(String) selectedTag!:string;
 
         selectTag(tag: string):void {
-            this.selectedTag = tag;
+            // this.selectedTag = tag;
+            this.$emit("update:selectedTag", tag);
         }
         
         addTag():void {
