@@ -2,17 +2,23 @@
     <label class="notes">
         <span class="name">备注：</span> 
         <input type="text" placeholder="请输入备注"
-            v-model="notes" />
+            v-model="data" />
     </label>
 </template>
 
 <script lang="ts">
-    import { Component } from "vue-property-decorator";
+    import { Component,Prop,Watch } from "vue-property-decorator";
     import Vue from "vue";
 
     @Component
     export default class Notes extends Vue{
-        notes = "";
+        @Prop(String) notes!:string;
+        data:string = this.notes;
+
+        @Watch('data')
+        onDataChange():void{
+            this.$emit("update:notes", this.data);
+        }
     }
 </script>
 

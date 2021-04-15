@@ -24,11 +24,13 @@
 
 <script lang="ts">
     import Vue from "vue";
-    import { Component } from "vue-property-decorator";
+    import { Component,Prop} from "vue-property-decorator";
    
     @Component
     export default class NumberPad extends Vue{
-        output = "0";
+        @Prop({required:true, type:Number}) amount!:number;
+
+        output = this.amount.toString();
 
         inputContent(event: PointerEvent): void {
             const button = event.target as HTMLButtonElement;
@@ -60,8 +62,15 @@
         }
 
         ok():void {
-            console.log("ok");
+            
+            if(this.output[this.output.length - 1] === '.') {
+                this.output += "0";
+            }
+
+            this.$emit("update:amount", parseFloat(this.output));
+            this.output = "0";
         }
+
 
     }
 </script>

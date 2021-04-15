@@ -1,23 +1,23 @@
 <template>
      <div class="type">
         <ul class="types">
-            <li  :class="type==='-'?'selected':''" @click="changeType('-')">支出</li>
+            <li :class="type==='-'?'selected':''" @click="changeType('-')">支出</li>
             <li :class="type==='+'?'selected':''" @click="changeType('+')">收入</li>
         </ul>
     </div>
 </template>
 
 <script lang="ts">
-    import { Component } from 'vue-property-decorator';
+    import { Component,Prop } from 'vue-property-decorator';
     import Vue from 'vue';
     
     @Component
     export default class Types extends Vue{
         // type为'-'时是支出，为'+'时是收入。默认是支出。
-        type = '-'; 
+        @Prop({required:true, type:String}) type!:string; 
         
         changeType(type:string):void {
-            this.type = type;
+           this.$emit("update:type",type);
         }
     }
 </script>
