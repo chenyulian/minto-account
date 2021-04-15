@@ -1,24 +1,40 @@
 <template>
     <div class="tags">
         <ul>
-            <li class="selected">餐饮</li>
-            <li>交通</li>
-            <li>日用</li>
-            <li>购物</li>
-            <li>医疗</li>
-            <li>人情</li>
-            <li><Icon name="add" /></li>
+            <li v-for="tag in tags" 
+                :key="tag" 
+                :class="tag === selectedTag?'selected':''"
+                @click="selectTag(tag)">
+                {{tag}}
+            </li>
+            <li @click="addTag"><Icon name="add" /></li>
         </ul>
     </div>
 </template>
 
-<script>
+<script lang="ts">
     import Vue from "vue";
-    import { Component } from "vue-property-decorator";
+    import { Component,Prop } from "vue-property-decorator";
 
     @Component
     export default class Tags extends Vue{
+        @Prop({ required: true, type: Array }) tags!: string[];
+        // to fix: tags可能为空数组
+        selectedTag = this.tags[0];
+
+        selectTag(tag: string):void {
+            this.selectedTag = tag;
+        }
         
+        addTag():void {
+            const tagName = window.prompt('请输入标签名');
+            if (tagName === '') {
+                alert('标签名不能为空');
+                return;
+            } else {
+                this.$emit('update:tags', [...this.tags,tagName]);
+            }
+        }
     }
 </script>
 

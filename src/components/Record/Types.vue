@@ -1,8 +1,8 @@
 <template>
      <div class="type">
         <ul class="types">
-            <li  class="selected">支出</li>
-            <li>收入</li>
+            <li  :class="type==='-'?'selected':''" @click="changeType('-')">支出</li>
+            <li :class="type==='+'?'selected':''" @click="changeType('+')">收入</li>
         </ul>
     </div>
 </template>
@@ -13,7 +13,12 @@
     
     @Component
     export default class Types extends Vue{
+        // type为'-'时是支出，为'+'时是收入。默认是支出。
+        type = '-'; 
         
+        changeType(type:string):void {
+            this.type = type;
+        }
     }
 </script>
 
