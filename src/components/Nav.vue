@@ -16,12 +16,14 @@
 </template>
 
 <style lang="scss" scoped>
+@import "~@/assets/style/common.scss";
 nav {
   display: flex;
   flex-direction: row;
   font-size: 14px;
   padding: 5px 0;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+  font-family: $font-hei;
   >.item {
     padding: 0 12px;
     display: flex;
@@ -31,7 +33,7 @@ nav {
     justify-content: center;
 
     &.router-link-active {
-        color: rgb(30, 232, 183);
+        color: $color-highlight;
     }
   }
   

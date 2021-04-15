@@ -16,10 +16,11 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "~@/assets/style/common.scss";
     .notes {
         display: flex;
         align-items: center;
-        color: rgba(30, 232, 183);
+        color: $color-highlight;
         > .name {
             padding-left: 20px;
             padding-right: 10px;

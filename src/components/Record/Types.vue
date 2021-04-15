@@ -18,10 +18,12 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "~@/assets/style/common.scss";
     .types {
+        font-family: $font-hei;
         color: white;
         display: flex;
-        background: rgba(30, 232, 183,50%);;
+        background: $color-highlight;;
         flex-direction: row;
         font-size: 24px;
         text-align: center;
@@ -37,7 +39,7 @@
                 content: '';
                 width: 100%;
                 height: 3px;
-                background-color: rgba(30, 232, 183);
+                background-color: darken($color-highlight, 15%);
                 bottom: 0;
                 left: 0;
             }

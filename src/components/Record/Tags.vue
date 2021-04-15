@@ -23,12 +23,14 @@
 </script>
 
 <style lang="scss" scoped>
+ @import "~@/assets/style/common.scss";
  .tags {
         flex-grow: 1;
         flex-wrap: wrap;
         background-color: white;
         overflow: auto;
-        color: rgba(30, 232, 183);
+        color: $color-highlight;
+        font-family: $font-hei;
 
         > ul {
             display: flex;
@@ -38,14 +40,14 @@
         > ul > li {
             width: 64px;
             height: 64px;
-            border: 1px solid rgba(30, 232, 183, 80%);
+            border: 1px solid $color-highlight;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 10px;
             border-radius: 4px;
             &.selected {
-                background-color: rgba(30, 232, 183, 50%);
+                background-color: $color-highlight;
                 color: white;
             }
         }
